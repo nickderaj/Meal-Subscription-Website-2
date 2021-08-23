@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Rubik:wght@300;400;500;600;700&display=swap");
 
 /* Main: #27ae60
 light: #93d7b0
@@ -30,88 +30,10 @@ html {
 }
 
 body {
-  font-family: "IBM Plex Sans Thai", sans-serif;
+  font-family: "Rubik", sans-serif;
   line-height: 1;
   font-weight: 400;
   color: #555;
-}
-
-/*  ------------------- */
-/*  GENERAL COMPONENTS */
-/*  ----------------- */
-
-.container {
-  max-width: 120rem;
-  padding: 0 3.2rem;
-  margin: 0 auto;
-}
-
-.grid {
-  display: grid;
-  gap: 9.6rem;
-}
-
-.grid--2-cols {
-  grid-template-columns: repeat(2, 1fr);
-}
-.grid--3-cols {
-  grid-template-columns: repeat(3, 1fr);
-}
-.grid--4-cols {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.heading-primary {
-  font-size: 6.2rem;
-  font-weight: 700;
-  line-height: 1.05;
-  color: #333;
-  letter-spacing: -0.5px;
-  margin-bottom: 3.2rem;
-}
-
-.btn:link,
-.btn:visited {
-  color: #fff;
-  display: inline-block;
-  text-decoration: none;
-  background-color: var(--primary-color);
-  font-size: 2rem;
-  padding: 1.6rem 3.2rem;
-  border-radius: 12px;
-  top: 0;
-  font-weight: 600;
-  transition: all 0.3s ease-in-out;
-}
-
-.btn--full:link,
-.btn-full:visited {
-  background-color: var(--primary-color);
-  color: #fff;
-}
-
-.btn--full:hover,
-.btn-full:active {
-  background-color: var(--dark-color);
-  color: #fff;
-  transform: scale(1.02);
-}
-
-.btn--outline:link,
-.btn--outline:visited {
-  background-color: var(--light-color);
-  color: #555;
-}
-
-.btn--outline:hover,
-.btn--outline:active {
-  background-color: var(--very-light-color);
-  color: #555;
-  box-shadow: inset 0 0 0 1px #fff; /* Trick to add border inside */
-}
-
-.margin-right-sm {
-  margin-right: 1.6rem;
 }
 
 /*  ------- */
@@ -228,7 +150,36 @@ body {
   font-weight: 700;
 }
 
-/*  ---------------------- */
+/*  -------------------- */
+/*  FEATURED IN SECTION */
+/*  ----------------- */
+
+.section-featured {
+  padding: 4.8rem 0 3.2rem 0;
+}
+
+.heading-featured-in {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2.4rem;
+  color: #666;
+}
+
+.logos {
+  display: flex;
+  justify-content: space-around;
+}
+
+.logos img {
+  height: 3.2rem;
+  filter: brightness(0);
+  opacity: 60%;
+}
+
+/*  --------------------- */
 /*  HOW IT WORKS SECTION */
 /*  ------------------- */
 
@@ -237,8 +188,148 @@ body {
   /* background-color: aquamarine; */
 }
 
-.section-how div div {
-  padding: 100px;
-  font-size: 50px;
-  /* background-color: orange; */
+.step-img {
+  width: 35%;
+}
+
+.step-number {
+  font-size: 8.6rem;
+  font-weight: 600;
+  color: var(--light-color);
+}
+
+.step-description {
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+.step-img-box {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-img-box::before,
+.step-img-box::after {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  z-index: -1;
+}
+
+.step-img-box::before {
+  width: 60%;
+  padding-bottom: 60%;
+  /* The padding makes it square, height doens't work here so this is a trick */
+  background-color: var(--very-light-color);
+}
+
+.step-img-box::after {
+  width: 45%;
+  padding-bottom: 45%;
+  background-color: var(--light-color);
+}
+
+/*  -------------- */
+/*  MEALS SECTION */
+/*  ------------ */
+
+.meal {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.07);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.section-meals {
+  padding: 9.6rem 0;
+  /* background-color: aquamarine; */
+}
+
+.meal-tags {
+  margin-bottom: 1.2rem;
+  display: flex;
+  gap: 0.6rem;
+}
+
+.meal-content {
+  padding: 2.4rem 4rem 4rem 4rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #555;
+  border-radius: 100px;
+  font-weight: 500;
+}
+
+.tag--vegetarian {
+  background-color: #7affb1;
+}
+
+.tag--vegan {
+  background-color: #95fca6;
+}
+
+.tag--paleo {
+  background-color: #ffe17d;
+}
+
+.meal-title {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 3.2rem;
+}
+
+.meal-attributes {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.meal-attribute {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.meal-img {
+  width: 100%;
+}
+
+.meal-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+  color: var(--primary-color);
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.list-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--primary-color);
 }
