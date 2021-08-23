@@ -240,15 +240,21 @@ body {
 /*  MEALS SECTION */
 /*  ------------ */
 
-.meal {
-  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.07);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
 .section-meals {
   padding: 9.6rem 0;
-  /* background-color: aquamarine; */
+  /* background-color: #eee; */
+}
+
+.meal {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.09);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.meal:hover {
+  transform: translate(0, -1rem);
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.08);
 }
 
 .meal-tags {
@@ -332,4 +338,9 @@ body {
   width: 3rem;
   height: 3rem;
   color: var(--primary-color);
+}
+
+.all-recipes {
+  text-align: center;
+  font-size: 1.8rem;
 }
